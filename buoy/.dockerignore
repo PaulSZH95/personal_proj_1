@@ -1,0 +1,8 @@
+**/__pycache__/
+**/data/
+**/resume_loc/
+**/Dockerfile
+**/chrome_extension/
+**/redis_db/
+**/redis_files/
+**/processor_archive.py

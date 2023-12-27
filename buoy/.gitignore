@@ -1,0 +1,11 @@
+# general exclusion
+**/__pycache__/
+**/data/
+**/resume_loc/
+# exclusion of in-progress-work
+**/chrome_extension/
+# specific files
+backend/test_get_website_info.py
+**/redis_db/
+**/redis_files/
+important_docker_syntax.txt
