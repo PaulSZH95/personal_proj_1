@@ -1,0 +1,9 @@
+fastapi==0.105.0
+uvicorn==0.24.0.post1
+python-multipart==0.0.6
+redis>=4.2.0rc1
+docx2txt==0.8
+six==1.16.0
+beautifulsoup4==4.12.2
+pdfminer.six==20221105
+html2text==2020.1.16

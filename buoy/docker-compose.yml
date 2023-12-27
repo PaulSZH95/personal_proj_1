@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  worker:
+    image: worker
+    build:
+      context: .
+      dockerfile: ./backend/worker/Dockerfile
+    volumes:
+      - ${abspath}/buoy/backend/api/resume_loc:/app/api/resume_loc
+    networks:
+      - redis_conn
+    restart: unless-stopped
+
+  api:
+    image: api
+    build:
+      context: .
+      dockerfile: ./backend/api/Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ${abspath}/buoy/backend/api/resume_loc:/app/api/resume_loc
+    networks:
+      - redis_conn
+    restart: unless-stopped
+
+  redis:
+    image: redis_aof
+    build:
+      context: .
+      dockerfile: ./backend/redis_qs/Dockerfile
+    volumes:
+      - ${abspath}/buoy/backend/redis_qs/redis_files:/data
+    networks:
+      - redis_conn
+    restart: unless-stopped
+
+  redis_db:
+    image: redis_db
+    build:
+      context: .
+      dockerfile: ./backend/redis_db_setup/Dockerfile
+    volumes:
+      - ${abspath}/buoy/backend/redis_db_setup/redis_db:/data
+    networks:
+      - redis_conn
+    restart: unless-stopped
+
+networks:
+  redis_conn:
+    driver: bridge
