@@ -7,7 +7,7 @@ Our project harnesses the power of advanced Natural Language Processing (NLP) to
 
 This backend uses two redis instance with one acting as msg queue and the other as nosql database. Fastapi is used as server to listen to request while a simple python script is used to dequeue and process requests.
 
-![queue](./images/msg_queue.png)
+![queue](./buoy/backend/images/msg_queue.png)
 
 ###  Built as backend for localised browser extension
 This backend is specifically engineered with browser extension in mind. Text data ingestion is simplified. The `text_chunk` endpoint is optimized to receive text selections directly from the user’s cursor on web pages. This feature is particularly useful for quickly capturing and processing job ads or resume data from various online sources.
@@ -78,18 +78,18 @@ Get methods:
 
     submit job_ad with /text_chunk/ endpoint
 
-    !["Example"](images/text_chunk.png)
+    !["Example"](./buoy/backend/images/text_chunk.png)
 
     submit resume with /resume/ endpoint
 
-    !["Example"](images/resume.png)
+    !["Example"](./buoy/backend/images/resume.png)
 
     get list of submission uids with /jobs/ endpoint
 
-    !["Example"](images/jobs.png)
+    !["Example"](./buoy/backend/images/jobs.png)
 
     get details of job based on uid with /jobs/{job_uid} endpoint
 
-    !["Example"](images/result_details.png)
+    !["Example"](./buoy/backend/images/result_details.png)
 
 Detailed Article Probably Coming Soon...
